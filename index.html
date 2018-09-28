@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title> Bentley Timer 2019</title>
+    </head>
+    
+    <body>
+        <style>
+            div.timer{
+                text-align: center;
+                font-size: 600%;
+            }
+        </style>
+        <div class="timer">
+            <p id="timerText"> seconds until graduation.</p>
+        </div>
+        <script>
+            var d = new Date();
+            window.setInterval(function(){
+                d = new Date();
+                document.getElementById("timerText").innerHTML = (1560121200-Math.floor(d.getTime()/1000)).toString()+" seconds until graduation.";
+            }, 1000);
+        </script>
+    </body>
+</html>

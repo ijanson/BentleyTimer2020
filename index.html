@@ -6,22 +6,33 @@
     
     <body onload="timeCheck()">
         <style>
-            div.timer{
+            #seconds{
                 text-align: center;
                 font-size: 600%;
             }
+            #days{
+                text-align: center;
+                font-size: 400%;
+            }
         </style>
-        
-        <div class="timer">
-            <p id="timerText"> seconds until graduation.</p>
-        </div>
+
+        <p id="seconds"> seconds until graduation.</p>
+
+        <p id="days">( # days until graduation)</p>
 
         <script>
             var d = new Date();
-            function timeCheck (){
+
+            function timeCheck () {
                 d = new Date();
-                document.getElementById("timerText").innerHTML = (1560121200-Math.floor(d.getTime()/1000)).toString()+" seconds until graduation.";
+
+                var sec = 1560121200-Math.round(d.getTime()/1000);
+
+                document.getElementById("seconds").innerHTML = sec.toString()+" seconds until graduation.";
+                document.getElementById("days").innerHTML = "(" + (sec/86400).toString() + " days until graduation.)";
+
             }
+
             window.setInterval(function(){
                 timeCheck();
             }, 1000);

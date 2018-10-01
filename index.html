@@ -27,9 +27,10 @@
                 d = new Date();
 
                 var sec = 1560121200-Math.round(d.getTime()/1000);
+                var days = parseFloat((sec/86400).toFixed(5));
 
                 document.getElementById("seconds").innerHTML = sec.toString()+" seconds until graduation.";
-                document.getElementById("days").innerHTML = "(" + (sec/86400).toString() + " days until graduation.)";
+                document.getElementById("days").innerHTML = "(" + days.toString() + " days until graduation.)";
 
             }
 

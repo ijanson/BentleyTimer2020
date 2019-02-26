@@ -6,13 +6,22 @@
 </head>
 <body onload="whatPeriod()">
 <p></p>
-<div class="container-fluid" style="font-size: 35px; text-align: center; margin: 15px;">
-	<p style="padding: 20px">Current time: <span id="hours"></span>:<span id="extra0"></span><span id="minutes"></span></p>
-	<p style="padding: 20px">Day of the week: <span id="week"></span></p>
-	<p style="padding: 20px">Current period: <span id="currentperiod"></span></p>
-	<p style="padding: 20px">Next period: <span id="nextperiod"></span></p>
+<div class="whole">
+	<p class="horizontal">Current time: <span id="hours"></span>:<span id="extra0"></span><span id="minutes"></span></p>
+	<p class="horizontal">Day of the week: <span id="week"></span></p>
+	<p class="horizontal">Current period: <span id="currentperiod"></span></p>
+	<p class="horizontal">Next period: <span id="nextperiod"></span></p>
 </div>
-
+	<style>
+		.horizontal {
+			padding: 20px;
+		}
+		.whole {
+			font-size: 35px;
+			text-align: center;
+			margin: 15px;
+		}
+	</style>
 	<script>
     function whatPeriod(){
         var d = new Date();

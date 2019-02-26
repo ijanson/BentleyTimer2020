@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title> Bentley Timer 2019</title>
+    </head>
+    
+    <body onload="timeCheck()">
+        <style>
+            #secondspart{
+                text-align: center;
+                font-size: 600%;
+            }
+            #dayspart{
+                text-align: center;
+                font-size: 400%;
+            }
+        </style>
+
+        <div id="secondspart">
+            <p><span id="seconds"></span> seconds until graduation.</p>
+        </div>
+        <div id="dayspart">
+            <p><span id="days"></span> days until graduation</p>
+        </div>
+
+        <script>
+            var d = new Date();
+            function timeCheck () {
+                d = new Date();
+                var sec = 1560121200-Math.round(d.getTime()/1000);
+                var days = parseFloat((sec/86400).toFixed(5));
+                document.getElementById("seconds").innerHTML = sec;
+                document.getElementById("days").innerHTML = days;
+            }
+            window.setInterval(function(){
+                timeCheck();
+            }, 1000);
+        </script>
+    </body>
+</html>

@@ -38,3 +38,22 @@ body{
 	text-align: center;
 }
 
+.horizontal {
+			padding: 30px;
+}
+
+.whole {
+			font-size: 35px;
+			text-align: center;
+			margin: 15px;
+}
+
+.subnextperiod {
+      font-size: 30px;
+      padding: 40px;
+}
+
+.periodbutton {
+      text-align: center;
+      padding: 40px;
+}

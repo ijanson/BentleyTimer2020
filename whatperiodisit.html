@@ -7,10 +7,11 @@
 <body onload="whatPeriod()">
 <p></p>
 <div class="whole">
-	<p class="horizontal">Current time: <span id="hours"></span>:<span id="extra0"></span><span id="minutes"></span></p>
-	<p class="horizontal">Day of the week: <span id="week"></span></p>
+	<p class="horizontal">Current time: <span id="date"></span></p>
 	<p class="horizontal">Current period: <span id="currentperiod"></span></p>
 	<p class="horizontal">Next period: <span id="nextperiod"></span></p>
+  <span class="subnextperiod">Minutes until next period: <span id="minnextperiod"></span></span>
+  <span class="subnextperiod">Seconds until next period: <span id="secnextperiod"></span></span>
 </div>
 	<style>
 		.horizontal {
@@ -21,6 +22,10 @@
 			text-align: center;
 			margin: 15px;
 		}
+    .subnextperiod {
+      font-size: 30px;
+      padding: 40px;
+    }
 	</style>
 	<script>
     function whatPeriod(){
@@ -28,99 +33,94 @@
   			var h = d.getHours();
   			var m = d.getMinutes();
   			var w = d.getDay();
+        var s = d.getSeconds();
   			var p = "Nice, it's not school right now!";
-  			var n = "ERROR!! PLEASE TELL JEREMY HUB IF YOU EVER SEE THIS MESSAGE"
-  			document.getElementById("hours").innerHTML = h;
-        document.getElementById("minutes").innerHTML = m;
-        if (m < 10) {
-          document.getElementById("extra0").innerHTML = "0";
-        }
-        if (m >= 10) {
-          document.getElementById("extra0").innerHTML = "";
-        }
+  			var n = "ERROR!!";
+        var t = (h * 3600) + (m * 60) + s;
+        document.getElementById("date").innerHTML = d;
   			if (w == 0) {
-  			 document.getElementById("week").innerHTML = "Sunday";
-  			 document.getElementById("currentperiod").innerHTML = "It's a weekend, what are you doing checking the period?!";
-  			 document.getElementById("nextperiod").innerHTML = 1;
+  		    document.getElementById("currentperiod").innerHTML = "It's a weekend, what are you doing checking the period?!";
+  		    document.getElementById("nextperiod").innerHTML = 1;
   			}
   			else if (w == 1) {
-  				document.getElementById("week").innerHTML = "Monday";
-				if ((h == 8 && m < 10) || (h < 8)) {n = 1}
-				else if (h == 8 && m >= 10) {p = 1; n = 2}
-  				else if (h == 9 && m < 50) {p = 2; n = "Town Meeting"}
-  				else if ((h == 9 && m >=50) || (h == 10 && m < 10)) {p = "Town Meeting"; n = "Break"}
-  				else if (h == 10 && m >= 10 && m < 30) {p = "Break"; n = 3}
-  				else if ((h == 10 && m <= 30) || (h == 11 && m < 20)) {p = 3; n = 4}
-  				else if ((h == 11 && m >= 20) || (h == 12 && m < 10)) {p = 4; n = "Lunch"}
-  				else if (h == 12 && m >= 10 && m < 50) {p = "Lunch"; n = 5}
-  				else if ((h == 12 && m >= 50) || (h == 13 && m < 40)) {p = 5; n = 6}
-  				else if ((h == 13 && m >= 40) || (h == 14 && m < 30)) {p = 6; n = 7}
-  				else if ((h == 14 && m >= 30) || (h == 15 && m < 20)) {p = 7; n = 1}
-  				else {n = 1}
+				  if (t < 29400) {n = 1; secnext = 29400 - t}
+				  else if (29400 <= t && t < 32400) {p = 1; n = 2; secnext = 32400 - t}
+  				else if (32400 <= t && t < 35400) {p = 2; n = "Town Meeting"; secnext = 35400 - t} 
+  				else if (35400 <= t && t < 36600) {p = "Town Meeting"; n = "Break"; secnext = 36600 - t}  
+  				else if (36600 <= t && t < 37800) {p = "Break"; n = 3; secnext = 37800 - t}
+  				else if (37800 <= t && t < 40800) {p = 3; n = 4; secnext = 40800 - t}
+  				else if (40800 <= t && t < 43800) {p = 4; n = "Lunch"; secnext = 43800 - t}
+  				else if (43800 <= t && t < 46200) {p = "Lunch"; n = 5; secnext = 46200 - t}
+  				else if (46200 <= t && t < 49200) {p = 5; n = 6; secnext = 49200 - t}
+  				else if (49200 <= t && t < 52200) {p = 6; n = 7; secnext = 52200 - t}
+  				else if (52200 <= t && t < 55200) {p = 7; n = 1; secnext = 55200 - t}
+  				else {n = 1; secnext = 115800 - t}
   				document.getElementById("currentperiod").innerHTML = p;
   				document.getElementById("nextperiod").innerHTML = n;
+          document.getElementById("secnextperiod").innerHTML = secnext;
   			}
   			else if (w == 2) {
-  				document.getElementById("week").innerHTML = "Tuesday";
-  				if ((h == 8 && m < 10) || (h < 8)) {n = 1}
-				else if ((h == 8 && m >= 10) || (h == 9 && m < 50)) {p = 1; n = "Advisory"}
-  				else if ((h == 9 && m >=50) || (h == 10 && m < 10)) {p = "Advisory"; n= "Break"}
-  				else if (h == 10 && m >= 10 && m < 40) {p = "Break"; n = 2}
-  				else if ((h == 10 && m >= 40) || (h == 11 && m < 40)) {p = 2; n = 6}
-  				else if ((h == 11 && m >= 40) || (h == 12 && m < 40)) {p = 6; n = "Lunch"}
-  				else if ((h == 12 && m >= 40) || (h == 13 && m < 40)) {p = "Lunch"; n = 7}
-  				else if ((h == 13 && m >= 40) || (h == 14) || (h == 15 && m < 20)) {p = 7; n = 3}
-  				else {n = 3}
+  				if (t < 29400) {n = 1; secnext = 29400 - t}
+				  else if (29400 <= t && t < 35400) {p = 1; n = "Advisory"; secnext = 35400 - t}
+  				else if (35400 <= t && t < 36600) {p = "Advisory"; n= "Break"; secnext = 36600 - t} 
+  				else if (36600 <= t && t < 38400) {p = "Break"; n = 2; secnext = 38400 - t}
+  				else if (38400 <= t && t < 42000) {p = 2; n = 6; secnext = 42000 - t}
+  				else if (42000 <= t && t < 45600) {p = 6; n = "Lunch"; secnext = 45600 - t}
+  				else if (45600 <= t && t < 49200) {p = "Lunch"; n = 7; secnext = 49200 - t}
+  				else if (49200 <= t && t < 55200) {p = 7; n = 3; secnext = 55200 - t}
+  				else {n = 3; secnext = 115800 - t}
   				document.getElementById("currentperiod").innerHTML = p;
   				document.getElementById("nextperiod").innerHTML = n;
+          document.getElementById("secnextperiod").innerHTML = secnext;
   			}
   			else if (w == 3) {
-  				document.getElementById("week").innerHTML = "Wednesday";
-  				if ((h == 8 && m < 10) || (h < 8)) {n = 3}
-				else if ((h == 8 && m >= 10) || (h == 9 && m < 50)) {p = 3; n = "Town Meeting"}
-  				else if ((h == 9 && m >=50) || (h == 10 && m < 10)) {p = "Town Meeting"; n = "Break"}
-  				else if (h == 10 && m >= 10 && m < 40) {p = "Break"; n = "Flex"}
-  				else if ((h == 10 && m >= 40) || (h == 11 && m < 40)) {p = "Flex"; n = 4}
-  				else if ((h == 11 && m >= 40) || (h == 12 && m < 40)) {p = 4; n = "Lunch"}
-  				else if ((h == 12 && m >= 40) || (h == 13 && m < 40)) {p = "Lunch"; n = 5}
-  				else if ((h == 13 && m >= 40) || (h == 14) || (h == 15 && m < 20)) {p = 5; n = 2}
-  				else {n = 2}
+  				if (t < 29400) {n = 3; secnext = 29400 - t}
+				  else if (29400 <= t && t < 35400) {p = 3; n = "Town Meeting"; secnext = 35400 - t}
+  				else if (35400 <= t && t < 36600) {p = "Town Meeting"; n = "Break"; secnext = 36600 - t}
+  				else if (36600 <= t && t < 38400) {p = "Break"; n = "Flex"; secnext = 38400 - t}
+  				else if (38400 <= t && t < 42000) {p = "Flex"; n = 4; secnext = 42000 - t}
+  				else if (42000 <= t && t < 45600) {p = 4; n = "Lunch"; secnext = 45600 - t}
+  				else if (45600 <= t && t < 49200) {p = "Lunch"; n = 5; secnext = 49200 - t}
+  				else if (49200 <= t && t < 55200) {p = 5; n = 2; secnext = 55200 - t}
+  				else {n = 2; secnext = 115800 - t}
   				document.getElementById("currentperiod").innerHTML = p;
   				document.getElementById("nextperiod").innerHTML = n;
+          document.getElementById("secnextperiod").innerHTML = secnext;
   			}
   			else if (w == 4) {
-  				document.getElementById("week").innerHTML = "Thursday";
-  				if ((h == 8 && m < 10) || (h < 8)) {n = 1}
-				else if ((h == 8 && m >= 10) || (h == 9 && m < 50)) {p = 2; n = "Advisory"}
-  				else if ((h == 9 && m >=50) || (h == 10 && m < 10)) {p = "Advisory"; n = "Break"}
-  				else if (h == 10 && m >= 10 && m < 40) {p = "Break"; n = 1}
-  				else if ((h == 10 && m >= 40) || (h == 11 && m < 40)) {p = 1; n = 7}
-  				else if ((h == 11 && m >= 40) || (h == 12 && m < 40)) {p = 7; n = "Lunch"}
-  				else if ((h == 12 && m >= 40) || (h == 13 && m < 40)) {p = "Lunch"; n = 6}
-  				else if ((h == 13 && m >= 40) || (h == 14) || (h == 15 && m < 20)) {p = 6; n = 4}
-  				else {n = 4}
+  				if (t < 29400) {n = 1; secnext = 29400 - t}
+				  else if (29400 <= t && t < 35400) {p = 2; n = "Advisory"; secnext = 35400 - t}
+  				else if (35400 <= t && t < 36600) {p = "Advisory"; n = "Break"; secnext = 36600 - t}
+  				else if (36600 <= t && t < 38400) {p = "Break"; n = 1; secnext = 38400 - t}
+  				else if (38400 <= t && t < 42000) {p = 1; n = 7; secnext = 42000 - t}
+  				else if (42000 <= t && t < 45600) {p = 7; n = "Lunch"; secnext = 45600 - t}
+  				else if (45600 <= t && t < 49200) {p = "Lunch"; n = 6; secnext = 49200 - t}
+  				else if (49200 <= t && t < 55200) {p = 6; n = 4; secnext = 55200 - t}
+  				else {n = 4; secnext = 115800 - t}
   				document.getElementById("currentperiod").innerHTML = p;
   				document.getElementById("nextperiod").innerHTML = n;
+          document.getElementById("secnextperiod").innerHTML = secnext;
   			}
   			else if (w == 5) {
-  				document.getElementById("week").innerHTML = "Friday";
-  				if ((h == 8 && m < 10) || (h < 8)) {n = 4}
-				else if ((h == 8 && m >= 10) || (h == 9 && m < 50)) {p = 4; n = "Town Meeting"}
-  				else if ((h == 9 && m >=50) || (h == 10 && m < 10)) {p = "Town Meeting"; n = "Break"}
-  				else if (h == 10 && m >= 10 && m < 40) {p = "Break"; n = "Flex"}
-  				else if ((h == 10 && m >= 40) || (h == 11 && m < 30)) {p = "Flex"; n = 3}
-  				else if ((h == 11 && m >= 30) || (h == 12 && m < 30)) {p = 3; n = "Lunch"}
-  				else if ((h == 12 && m >= 30) || (h == 13 && m < 30)) {p = "Lunch"; n = 5}
-  				else if ((h == 13 && m >= 30) || (h == 14 && m < 30)) {p = 5; n = 1}
-  				else {n = 1}
+  				if (t < 29400) {n = 4; secnext = 29400 - t}
+				  else if (29400 <= t && t < 35400) {p = 4; n = "Town Meeting"; secnext = 35400 - t}
+  				else if (35400 <= t && t < 36600) {p = "Town Meeting"; n = "Break"; secnext = 36600- t}
+  				else if (36600 <= t && t < 38400) {p = "Break"; n = "Flex"; secnext = 38400 - t}
+  				else if (38400 <= t && t < 42000) {p = "Flex"; n = 3; secnext = 42000 - t}
+  				else if (42000 <= t && t < 45600) {p = 3; n = "Lunch"; secnext = 45600 - t}
+  				else if (45600 <= t && t < 49200) {p = "Lunch"; n = 5; secnext = 49200 - t}
+  				else if (49200 <= t && t < 55200) {p = 5; n = 1; secnext = 55200 - t}
+  				else {n = 1; secnext = 115800 - t}
   				document.getElementById("currentperiod").innerHTML = p;
   				document.getElementById("nextperiod").innerHTML = n;
+          document.getElementById("secnextperiod").innerHTML = secnext;
   			}
   			else if (w == 6) {
-  				document.getElementById("week").innerHTML = "Saturday";
   				document.getElementById("currentperiod").innerHTML = "It's a weekend, what are you doing checking the period?!";
   				document.getElementById("nextperiod").innerHTML = 1;
   			}
+        var minnext = Number(document.getElementById("secnextperiod").innerHTML) / 60;
+        document.getElementById("minnextperiod").innerHTML = Math.round(minnext);
 		}
     window.setInterval(function(){
           whatPeriod();

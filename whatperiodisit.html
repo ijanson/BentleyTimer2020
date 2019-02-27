@@ -1,17 +1,18 @@
-<!DOCTYPE html>
 <html>
 <head>
 	<title>What Period Is It?</title>
+  <link href="https://fonts.googleapis.com/css?family=Muli:300" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.abezukor.github.io/BentleyTimer2019/stylesheet.css">
 </head>
 <body onload="whatPeriod()">
   <p></p>
-  <div class="whole">
-	<p class="horizontal">Current time: <span id="date"></span></p>
-	<p class="horizontal">Current period: <span id="currentperiod"></span></p>
-	<p class="horizontal">Next period: <span id="nextperiod"></span></p>
-  <span class="subnextperiod">Minutes until next period: <span id="minnextperiod"></span></span>
-  <span class="subnextperiod">Seconds until next period: <span id="secnextperiod"></span></span>
+  <div class="whole" id="textdiv">
+	<p class="horizontal" id="date1">Current time: <span id="date"></span></p>
+	<p class="horizontal" id="currentperiod1">Current period: <span id="currentperiod"></span></p>
+	<p class="horizontal" id="nextperiod1">Next period: <span id="nextperiod"></span></p>
+  <span class="subnextperiod" id="minnextperiod1">Minutes until next period: <span id="minnextperiod"></span></span>
+  <span class="subnextperiod" id="secnextperiod1">Seconds until next period: <span id="secnextperiod"></span></span>
 </div>
   <a href="index.html"><div class="periodbutton">
       <button class="btn btn-primary">How Much Time Until 2019 Graduation?</button>

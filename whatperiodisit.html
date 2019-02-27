@@ -5,14 +5,17 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body onload="whatPeriod()">
-<p></p>
-<div class="whole">
+  <p></p>
+  <div class="whole">
 	<p class="horizontal">Current time: <span id="date"></span></p>
 	<p class="horizontal">Current period: <span id="currentperiod"></span></p>
 	<p class="horizontal">Next period: <span id="nextperiod"></span></p>
   <span class="subnextperiod">Minutes until next period: <span id="minnextperiod"></span></span>
   <span class="subnextperiod">Seconds until next period: <span id="secnextperiod"></span></span>
 </div>
+  <a href="index.html"><div class="periodbutton">
+      <button class="btn btn-primary">How Much Time Until 2019 Graduation?</button>
+  </div></a>
 	<style>
 		.horizontal {
 			padding: 30px;
@@ -24,6 +27,10 @@
 		}
     .subnextperiod {
       font-size: 30px;
+      padding: 40px;
+    }
+    .periodbutton {
+      text-align: center;
       padding: 40px;
     }
 	</style>

@@ -7,17 +7,17 @@
 </head>
 <body onload="whatPeriod()">
   <p></p>
-  <div class="whole" id="textdiv">
-	<p class="horizontal" id="date1">Current time: <span id="date"></span></p>
-	<p class="horizontal" id="currentperiod1">Current period: <span id="currentperiod"></span></p>
-	<p class="horizontal" id="nextperiod1">Next period: <span id="nextperiod"></span></p>
-  <span class="subnextperiod" id="minnextperiod1">Minutes until next period: <span id="minnextperiod"></span></span>
-  <span class="subnextperiod" id="secnextperiod1">Seconds until next period: <span id="secnextperiod"></span></span>
+  <div id="textdiv">
+	<div class="horizontal" id="date1">Current time: <span id="date"></span></div>
+	<div class="horizontal" id="currentperiod1">Current period: <span id="currentperiod"></span></div>
+	<div class="horizontal" id="nextperiod1">Next period: <span id="nextperiod"></span></div>
+  <div class="subnextperiod" id="minnextperiod1">Minutes until next period: <span id="minnextperiod"></span></div>
+  <div class="subnextperiod" id="secnextperiod1">Seconds until next period: <span id="secnextperiod"></span></div>
   <p></p><span id="dayweek"></span>
 </div>
   <a href="index.html"><div class="periodbutton">
       <button class="btn btn-primary">How Much Time Until 2019 Graduation?</button>
-  </div></a>
+  </a></div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js""></script>
 	<script>
     function whatPeriod(){
@@ -121,14 +121,14 @@
          }, 1000);
 	</script>
   <script type="text/javascript">
-    $.getJSON('https://spreadsheet.google.com/feeds/list/1QOcAGOgbiweTeFaG85_0Mdf9GjVYHrZz0BvbOojd47E/od6/public/values?alt=json',
-      function (data) {
-        var d = data.feed.entry;
-        console.log(d);
-          $.each(d, function () {
-            //thisworks//document.getElementById("dayweek").innerHTML = this["gsx$p8"]["$t"]
-          })
-      })
+//    $.getJSON('https://spreadsheet.google.com/feeds/list/1QOcAGOgbiweTeFaG85_0Mdf9GjVYHrZz0BvbOojd47E/od6/public/values?alt=json',
+//      function (data) {
+//        var d = data.feed.entry;
+//        console.log(d);
+//          $.each(d, function () {
+//            document.getElementById("dayweek").innerHTML = this["gsx$p1"]["$t"]
+//          })
+//      })
   </script>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

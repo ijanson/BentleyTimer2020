@@ -8,7 +8,7 @@
 <body onload="whatPeriod()">
   <p></p>
   <div id="textdiv">
-	<div class="horizontal" id="date1">Current time: <span id="date"></span></div>
+	<div class="horizontal" id="date1"><span id="date"></span></div>
 	<div class="horizontal" id="currentperiod1">Current period: <span id="currentperiod"></span></div>
 	<div class="horizontal" id="nextperiod1">Next period: <span id="nextperiod"></span></div>
   <div class="subnextperiod" id="minnextperiod1">Minutes until next period: <span id="minnextperiod"></span></div>
@@ -16,7 +16,7 @@
   <p></p><span id="dayweek"></span>
 </div>
   <a href="index.html"><div class="periodbutton">
-      <button class="btn btn-primary">How Much Time Until 2019 Graduation?</button>
+      <button class="btn btn-primary" id="button">How Much Time Until 2019 Graduation?</button>
   </a></div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js""></script>
 	<script>
@@ -34,6 +34,7 @@
   		    document.getElementById("currentperiod").innerHTML = "It's a weekend, what are you doing checking the period?!";
   		    document.getElementById("nextperiod").innerHTML = 1;
           secnext = (86400 - t) + 29400;
+          document.getElementById("secnextperiod").innerHTML = secnext;
   			}
   			else if (w == 1) {
 				  if (t < 29400) {n = 1; secnext = 29400 - t}
@@ -112,6 +113,7 @@
   				document.getElementById("currentperiod").innerHTML = "It's a weekend, what are you doing checking the period?!";
   				document.getElementById("nextperiod").innerHTML = 1;
           secnext = ((86400 * 2) - t + 29400);
+          document.getElementById("secnextperiod").innerHTML = secnext;
   			}
         var minnext = Number(document.getElementById("secnextperiod").innerHTML) / 60;
         document.getElementById("minnextperiod").innerHTML = Math.round(minnext);
@@ -123,7 +125,7 @@
   <script type="text/javascript">
 //    $.getJSON('https://spreadsheet.google.com/feeds/list/1QOcAGOgbiweTeFaG85_0Mdf9GjVYHrZz0BvbOojd47E/od6/public/values?alt=json',
 //      function (data) {
-//        var d = data.feed.entry;
+//        var data = data.feed.entry;
 //        console.log(d);
 //          $.each(d, function () {
 //            document.getElementById("dayweek").innerHTML = this["gsx$p1"]["$t"]

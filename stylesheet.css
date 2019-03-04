@@ -11,7 +11,7 @@ body{
 	}
 }
 
-#date, #date1{
+#date, #date1, #button{
 	animation: fadein 0.8s ease-in;
 }
 
@@ -24,11 +24,11 @@ body{
 }
 
 #minnextperiod, #minnextperiod1{
-	animation: fadein 2s ease-in;
+	animation: fadein 1.5s ease-in;
 }
 
 #secnextperiod, #secnextperiod1 {
-	animation: fadein 2s ease-in;
+	animation: fadein 1.5s ease-in;
 }
 
 #textdiv{

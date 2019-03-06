@@ -26,18 +26,12 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js""></script>
 	<script src="script.js"></script>
-
-	<!-- Spreadsheet Test code-->
 	<script type="text/javascript">
-	$.getJSON('https://spreadsheet.google.com/feeds/list/1QOcAGOgbiweTeFaG85_0Mdf9GjVYHrZz0BvbOojd47E/od6/public/values?alt=json',
-		function (data) {
-		var d = data.feed.entry;
-		console.log(d);
-			$.each(d, function () {
-			document.getElementById("dayweek").innerHTML = d[0]["gsx$day"]["$t"]
-			})
-		})
+//	function (data) {
+//	var d = data.feed.entry;
+//	console.log(d);
+//		$.each(d, function () {
+//		document.getElementById("dayweek").innerHTML = d[0]["gsx$day"]["$t"]
 	</script>
-
 </body>
 </html>

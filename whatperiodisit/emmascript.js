@@ -85,13 +85,13 @@ function whatPeriod(){
 		
 				case 5:
 					if (t < 29400) {n = 4; secnext = 29400 - t}
-					else if (29400 <= t && t < 35400) {p = 4; n = "Town Meeting"; secnext = 35400 - t}
+					else if (29400 <= t && t < 35400) {p = "spanish"; n = "Town Meeting"; secnext = 35400 - t}
 					else if (35400 <= t && t < 36600) {p = "Town Meeting"; n = "Break"; secnext = 36600 - t}
 					else if (36600 <= t && t < 38400) {p = "Break"; n = "Flex"; secnext = 38400 - t}
-					else if (38400 <= t && t < 41400) {p = "Flex"; n = 3; secnext = 41400 - t}
-					else if (41400 <= t && t < 45000) {p = 3; n = "Lunch"; secnext = 45000 - t}
-					else if (45000 <= t && t < 48600) {p = "Lunch"; n = 5; secnext = 48600 - t}
-					else if (48600 <= t && t < 52200) {p = 5; n = "End of school"; secnext = 52200 - t}
+					else if (38400 <= t && t < 41400) {p = "Flex"; n = "calculus"; secnext = 41400 - t}
+					else if (41400 <= t && t < 45000) {p = "calculus"; n = "Lunch"; secnext = 45000 - t}
+					else if (45000 <= t && t < 48600) {p = "Lunch"; n = "statistics"; secnext = 48600 - t}
+					else if (48600 <= t && t < 52200) {p = "statistics"; n = "End of school"; secnext = 52200 - t}
 					else {n = 1; secnext = ((86400 * 3) - t + 29400)}
 					document.getElementById("currentperiod").innerHTML = p;
 					document.getElementById("nextperiod").innerHTML = n;

@@ -17,34 +17,34 @@ function whatPeriod(){
 			switch(w){
 				case 0:
 					document.getElementById("currentperiod").innerHTML = "It's a weekend, what are you doing checking the period?!";
-					document.getElementById("nextperiod").innerHTML = "History";
+					document.getElementById("nextperiod").innerHTML = "English";
 					secnext = (86400 - t) + 29400;
 					document.getElementById("secnextperiod").innerHTML = secnext;
 					break;
 				case 1:
-					if (t < 29400) {n = "History"; secnext = 29400 - t}
-					else if (29400 <= t && t < 32400) {p = "History"; n = "History"; secnext = 32400 - t}
-					else if (32400 <= t && t < 35400) {p = "History"; n = "Town Meeting"; secnext = 35400 - t} 
+					if (t < 29400) {n = "English"; secnext = 29400 - t}
+					else if (29400 <= t && t < 32400) {p = "English"; n = "Science"; secnext = 32400 - t}
+					else if (32400 <= t && t < 35400) {p = "Science"; n = "Town Meeting"; secnext = 35400 - t} 
 					else if (35400 <= t && t < 34800) {p = "Town Meeting"; n = "Break"; secnext = 34800 - t}  
 					else if (34800 <= t && t < 37800) {p = "Break"; n = "Calculus"; secnext = 37800 - t}
 					else if (37800 <= t && t < 40800) {p = "Calculus"; n = "Spanish"; secnext = 40800 - t}
 					else if (40800 <= t && t < 43200) {p = "Spanish"; n = "Lunch"; secnext = 43200 - t}
 					else if (43200 <= t && t < 46200) {p = "Lunch"; n = "Statistics"; secnext = 46200 - t}
-					else if (46200 <= t && t < 49200) {p = "Statistics"; n = "Forensics"; secnext = 49200 - t}
-					else if (49200 <= t && t < 52200) {p = "Forensics"; n = "Free"; secnext = 52200 - t}
+					else if (46200 <= t && t < 49200) {p = "Statistics"; n = "History"; secnext = 49200 - t}
+					else if (49200 <= t && t < 52200) {p = "History"; n = "Free"; secnext = 52200 - t}
 					else if (52200 <= t && t < 55200) {p = "Free"; n = "End of school"; secnext = 55200 - t}
-					else {n = "History"; secnext = (86400 - t) + 29400}
+					else {n = "English"; secnext = (86400 - t) + 29400}
 					document.getElementById("currentperiod").innerHTML = p;
 					document.getElementById("nextperiod").innerHTML = n;
 					document.getElementById("secnextperiod").innerHTML = secnext;
 					break;
 				case 2:
-					if (t < 29400) {n = "History"; secnext = 29400 - t}
-					else if (29400 <= t && t < 35400) {p = "History"; n = "Advisory"; secnext = 35400 - t}
+					if (t < 29400) {n = "English"; secnext = 29400 - t}
+					else if (29400 <= t && t < 35400) {p = "English"; n = "Advisory"; secnext = 35400 - t}
 					else if (35400 <= t && t < 36600) {p = "Advisory"; n= "Break"; secnext = 36600 - t} 
-					else if (34800 <= t && t < 38400) {p = "Break"; n = "History"; secnext = 38400 - t}
-					else if (38400 <= t && t < 42000) {p = "History"; n = "Forensics"; secnext = 42000 - t}
-					else if (42000 <= t && t < 45600) {p = "Forensics"; n = "Lunch"; secnext = 45600 - t}
+					else if (34800 <= t && t < 38400) {p = "Break"; n = "Science"; secnext = 38400 - t}
+					else if (38400 <= t && t < 42000) {p = "Science"; n = "History"; secnext = 42000 - t}
+					else if (42000 <= t && t < 45600) {p = "History"; n = "Lunch"; secnext = 45600 - t}
 					else if (45600 <= t && t < 49200) {p = "Lunch"; n = "Free"; secnext = 49200 - t}
 					else if (49200 <= t && t < 55200) {p = "Free"; n = "End of school"; secnext = 55200 - t}
 					else {n = "Calculus"; secnext = (86400 - t) + 29400}
@@ -62,21 +62,21 @@ function whatPeriod(){
 					else if (42000 <= t && t < 45600) {p = "Spanish"; n = "Lunch"; secnext = 45600 - t}
 					else if (45600 <= t && t < 49200) {p = "Lunch"; n = "Statistics"; secnext = 49200 - t}
 					else if (49200 <= t && t < 55200) {p = "Statistics"; n = "End of school"; secnext = 55200 - t}
-					else {n = "History"; secnext = (86400 - t) + 29400}
+					else {n = "Science"; secnext = (86400 - t) + 29400}
 					document.getElementById("currentperiod").innerHTML = p;
 					document.getElementById("nextperiod").innerHTML = n;
 					document.getElementById("secnextperiod").innerHTML = secnext;
 					break;
 		
 				case 4:
-					if (t < 29400) {n = "History"; secnext = 29400 - t}
-					else if (29400 <= t && t < 35400) {p = "History"; n = "Advisory"; secnext = 35400 - t}
+					if (t < 29400) {n = "English"; secnext = 29400 - t}
+					else if (29400 <= t && t < 35400) {p = "Science"; n = "Advisory"; secnext = 35400 - t}
 					else if (35400 <= t && t < 36600) {p = "Advisory"; n = "Break"; secnext = 36600 - t}
-					else if (34800 <= t && t < 38400) {p = "Break"; n = "History"; secnext = 38400 - t}
-					else if (38400 <= t && t < 42000) {p = "History"; n = "Free"; secnext = 42000 - t}
+					else if (34800 <= t && t < 38400) {p = "Break"; n = "English"; secnext = 38400 - t}
+					else if (38400 <= t && t < 42000) {p = "English"; n = "Free"; secnext = 42000 - t}
 					else if (42000 <= t && t < 45600) {p = "Free"; n = "Lunch"; secnext = 45600 - t}
-					else if (45600 <= t && t < 49200) {p = "Lunch"; n = "Forensics"; secnext = 49200 - t}
-					else if (49200 <= t && t < 55200) {p = "Forensics"; n = "End of school"; secnext = 55200 - t}
+					else if (45600 <= t && t < 49200) {p = "Lunch"; n = "History"; secnext = 49200 - t}
+					else if (49200 <= t && t < 55200) {p = "History"; n = "End of school"; secnext = 55200 - t}
 					else {n = "Spanish"; secnext = (86400 - t) + 29400}
 					document.getElementById("currentperiod").innerHTML = p;
 					document.getElementById("nextperiod").innerHTML = n;
@@ -92,7 +92,7 @@ function whatPeriod(){
 					else if (41400 <= t && t < 45000) {p = "Calculus"; n = "Lunch"; secnext = 45000 - t}
 					else if (45000 <= t && t < 48600) {p = "Lunch"; n = "Statistics"; secnext = 48600 - t}
 					else if (48600 <= t && t < 52200) {p = "Statistics"; n = "End of school"; secnext = 52200 - t}
-					else {n = "History"; secnext = ((86400 * 3) - t + 29400)}
+					else {n = "English"; secnext = ((86400 * 3) - t + 29400)}
 					document.getElementById("currentperiod").innerHTML = p;
 					document.getElementById("nextperiod").innerHTML = n;
 					document.getElementById("secnextperiod").innerHTML = secnext;
@@ -100,7 +100,7 @@ function whatPeriod(){
 				
 				case 6:
 					document.getElementById("currentperiod").innerHTML = "It's a weekend, what are you doing checking the period?!";
-					document.getElementById("nextperiod").innerHTML = "History";
+					document.getElementById("nextperiod").innerHTML = "English";
 					secnext = ((86400 * 2) - t + 29400);
 					document.getElementById("secnextperiod").innerHTML = secnext;
 					break;

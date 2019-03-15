@@ -26,7 +26,7 @@ function whatPeriod(){
 			document.getElementById("secnextperiod").innerHTML = secnext;
 			break;
 		case 1:
-			if (t < time("8:10")) {n = 1; secnext = time("8:10") - t}
+			if (t < time("8:10")) {n = "English"; secnext = time("8:10") - t}
 			else if (time("8:10") <= t && t < time("9:00")) {p = "English"; n = "Science"; secnext = time("9:00") - t}
 			else if (time("9:00") <= t && t < time("9:50")) {p = "Science"; n = "Town Meeting"; secnext = time("9:50") - t} 
 			else if (time("9:50") <= t && t < time("10:10")) {p = "Town Meeting"; n = "Break"; secnext = time("10:10") - t}  
@@ -43,7 +43,7 @@ function whatPeriod(){
 			document.getElementById("secnextperiod").innerHTML = secnext;
 			break;
 		case 2:
-			if (t < time("8:10")) {n = 1; secnext = time("8:10") - t}
+			if (t < time("8:10")) {n = "English"; secnext = time("8:10") - t}
 			else if (time("8:10") <= t && t < time("9:50")) {p = "English"; n = "Advisory"; secnext = time("9:50") - t}
 			else if (time("9:50") <= t && t < time("10:10")) {p = "Advisory"; n= "Break"; secnext = time("10:10") - t} 
 			else if (time("10:10") <= t && t < time("10:40")) {p = "Break"; n = "Science"; secnext = time("10:40") - t}
@@ -58,7 +58,7 @@ function whatPeriod(){
 			break;
 
 		case 3:
-			if (t < time("8:10")) {n = 1; secnext = time("8:10") - t}
+			if (t < time("8:10")) {n = "Calculus"; secnext = time("8:10") - t}
 			else if (time("8:10") <= t && t < time("9:50")) {p = "Calculus"; n = "Town Meeting"; secnext = time("9:50") - t}
 			else if (time("9:50") <= t && t < time("10:10")) {p = "Town Meeting"; n = "Break"; secnext = time("10:10") - t}
 			else if (time("10:10") <= t && t < time("10:40")) {p = "Break"; n = "Flex"; secnext = time("10:40") - t}
@@ -73,7 +73,7 @@ function whatPeriod(){
 			break;
 
 		case 4:
-			if (t < time("8:10")) {n = 1; secnext = time("8:10") - t}
+			if (t < time("8:10")) {n = "Science"; secnext = time("8:10") - t}
 			else if (time("8:10") <= t && t < time("9:50")) {p = "Science"; n = "Advisory"; secnext = time("9:50") - t}
 			else if (time("9:50") <= t && t < time("10:10")) {p = "Advisory"; n = "Break"; secnext = time("10:10") - t}
 			else if (time("10:10") <= t && t < time("10:40")) {p = "Break"; n = "English"; secnext = time("10:40") - t}
@@ -88,14 +88,14 @@ function whatPeriod(){
 			break;
 
 		case 5:
-			if (t < time("8:10")) {n = 4; secnext = time("8:10") - t}
+			if (t < time("8:10")) {n = "Spanish"; secnext = time("8:10") - t}
 			else if (time("8:10") <= t && t < time("9:50")) {p = "Spanish"; n = "Town Meeting"; secnext = time("9:50") - t}
 			else if (time("9:50") <= t && t < time("10:10")) {p = "Town Meeting"; n = "Break"; secnext = time("10:10") - t}
 			else if (time("10:10") <= t && t < time("10:40")) {p = "Break"; n = "Flex"; secnext = time("10:40") - t}
 			else if (time("10:40") <= t && t < time("11:30")) {p = "Flex"; n = "Calculus"; secnext = time("11:30") - t}
 			else if (time("11:30") <= t && t < time("12:30")) {p = "Calculus"; n = "Lunch"; secnext = time("12:30") - t}
 			else if (time("12:30") <= t && t < time("13:30")) {p = "Lunch"; n = "Statistics"; secnext = time("13:30") - t}
-			else if (time("13:30") <= t && t < time("15:30")) {p = "Statistics"; n = "End of school"; secnext = time("15:30") - t}
+			else if (time("13:30") <= t && t < time("14:30")) {p = "Statistics"; n = "End of school"; secnext = time("14:30") - t}
 			else {n = 1; secnext = ((time("24:00") * 3) - t + time("8:10"))}
 			document.getElementById("currentperiod").innerHTML = p;
 			document.getElementById("nextperiod").innerHTML = n;

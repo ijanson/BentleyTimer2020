@@ -97,7 +97,7 @@ function whatPeriod(){
 			else if (time("10:40") <= t && t < time("11:30")) {p = "Flex"; n = 3; secnext = time("11:30") - t}
 			else if (time("11:30") <= t && t < time("12:30")) {p = 3; n = "Lunch"; secnext = time("12:30") - t}
 			else if (time("12:30") <= t && t < time("13:30")) {p = "Lunch"; n = 5; secnext = time("13:30") - t}
-			else if (time("13:30") <= t && t < time("15:30")) {p = 5; n = "End of school"; secnext = time("15:30") - t}
+			else if (time("13:30") <= t && t < time("14:30")) {p = 5; n = "End of school"; secnext = time("14:30") - t}
 			else {n = 1; secnext = ((time("24:00") * 3) - t + time("8:10"))}
 			document.getElementById("currentperiod").innerHTML = p;
 			document.getElementById("nextperiod").innerHTML = n;

@@ -28,16 +28,16 @@ function whatPeriod(data) {
 	}
 
 	function getpersonnumber (input) {
-		if (input == 'Jeremy Harris') {return 0}
-		else if (input == 'Jeremy Hubinger') {return 1}
-		else if (input == 'Abraham Zukor') {return 2}
-		else if (input == 'Philip Livdan') {return 3}
-		else if (input == 'Chip Morimoto') {return 4}
-		else if (input == 'Emma Peterson') {return 5}
-		else if (input == 'Grace Bradley') {return 6}
-		else if (input == 'Lily Bresee') {return 7}
-		else if (input == 'Jack Randall') {return 8}
-		else if (input == 'Ethan Archibald') {return 9}
+		if (input == 'Jeremy Har') {return 0}
+		else if (input == 'Jeremy Hub') {return 1}
+		else if (input == 'Abe') {return 2}
+		else if (input == 'Philip') {return 3}
+		else if (input == 'Chip') {return 4}
+		else if (input == 'Emma') {return 5}
+		else if (input == 'Grace') {return 6}
+		else if (input == 'Lily') {return 7}
+		else if (input == 'Jack') {return 8}
+		else if (input == 'Ethan') {return 9}
 		else {return '10'}
 	}
 

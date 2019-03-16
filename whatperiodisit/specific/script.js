@@ -32,14 +32,14 @@ function whatPeriod(data) {
 		if (input == 'Jeremy Har') {return 0}
 		else if (input == 'Jeremy Hub') {return 1}
 		else if (input == 'Abe') {return 2}
-		else if (input == 'Philip') {return 3}
+		else if (input == 'Philip' || input == 'Phil') {return 3}
 		else if (input == 'Chip') {return 4}
 		else if (input == 'Emma') {return 5}
 		else if (input == 'Grace') {return 6}
 		else if (input == 'Lily') {return 7}
 		else if (input == 'Jack') {return 8}
-		else if (input == 'Ethan') {return 9}
-		else if (input == 'Jeffrey') {return 10}
+		else if (input == 'Ethan' || input == 'Ethen') {return 9}
+		else if (input == 'Jeffrey' || input == 'Kippah') {return 10}
 		else {return '11'}
 	}
 

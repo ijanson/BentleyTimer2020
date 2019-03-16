@@ -27,7 +27,8 @@ function whatPeriod(data) {
 		return finalperiod;
 	}
 
-	function getpersonnumber (input) {
+	function getpersonnumber (directinput) {
+		var input = directinput.trim();
 		if (input == 'Jeremy Har') {return 0}
 		else if (input == 'Jeremy Hub') {return 1}
 		else if (input == 'Abe') {return 2}

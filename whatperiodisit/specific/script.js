@@ -39,7 +39,8 @@ function whatPeriod(data) {
 		else if (input == 'Lily') {return 7}
 		else if (input == 'Jack') {return 8}
 		else if (input == 'Ethan') {return 9}
-		else {return '10'}
+		else if (input == 'Jeffrey') {return 10}
+		else {return '11'}
 	}
 
 	switch(w){

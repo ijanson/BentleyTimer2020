@@ -72,4 +72,11 @@ body{
 	background-color: grey;
 	height: 5%;
 	font-size: 20px;
+	animation: fadein 1s ease-in;
+}
+
+#namehere {
+	animation: fadein 1s ease-in;
+	font-size: 25px;
+	padding: 5px;
 }

@@ -29,19 +29,21 @@ function whatPeriod(data) {
 
 	function getpersonnumber (directinput) {
 		var input = directinput.trim();
-		if (input == 'Jeremy Har') {return 0}
-		else if (input == 'Jeremy Hub') {return 1}
-		else if (input == 'Abe') {return 2}
-		else if (input == 'Philip' || input == 'Phil') {return 3}
-		else if (input == 'Chip') {return 4}
-		else if (input == 'Emma') {return 5}
-		else if (input == 'Grace') {return 6}
-		else if (input == 'Lily') {return 7}
-		else if (input == 'Jack') {return 8}
-		else if (input == 'Ethan' || input == 'Ethen') {return 9}
-		else if (input == 'Jeffrey' || input == 'Kippah') {return 10}
+		if (input == data[0]['title']['$t']) {return 0}
+		else if (input == data[1]['title']['$t']) {return 1}
+		else if (input == data[2]['title']['$t']) {return 2}
+		else if (input == data[3]['title']['$t']) {return 3}
+		else if (input == data[4]['title']['$t']) {return 4}
+		else if (input == data[5]['title']['$t']) {return 5}
+		else if (input == data[6]['title']['$t']) {return 6}
+		else if (input == data[7]['title']['$t']) {return 7}
+		else if (input == data[8]['title']['$t']) {return 8}
+		else if (input == data[9]['title']['$t']) {return 9}
+		else if (input == data[10]['title']['$t']) {return 10}
 		else {return '11'}
 	}
+
+	console.log(data);
 
 	switch(w){
 		case 0:

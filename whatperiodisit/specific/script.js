@@ -137,5 +137,4 @@ function whatPeriod(data) {
 	var minnext = Number(document.getElementById("secnextperiod").innerHTML) / 60;
 	document.getElementById("minnextperiod").innerHTML = Math.round(minnext);
 	document.getElementById('date').innerHTML = d;
-	console.log(data);
 })},100)

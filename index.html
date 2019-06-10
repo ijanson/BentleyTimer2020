@@ -27,10 +27,10 @@
         </style>
 
         <div class="secondspart">
-            <p><span id="seconds"></span> seconds until graduation.</p>
+            <p><span id="seconds"></span> seconds since graduation.</p>
         </div>
         <div class="dayspart">
-            <p><span id="days"></span> days until graduation</p>
+            <p><span id="days"></span> days since graduation</p>
         </div>
         <a href="whatperiodisit/index.html"><div class="periodbutton">
             <button class="btn btn-primary">What Period Is It Right Now?</button>
@@ -40,7 +40,7 @@
             var d = new Date();
             function timeCheck () {
                 d = new Date();
-                var sec = 1560121200-Math.round(d.getTime()/1000);
+                var sec = ((1560121200-Math.round(d.getTime()/1000))*(-1));
                 var days = parseFloat((sec/86400).toFixed(5));
                 document.getElementById("seconds").innerHTML = sec;
                 document.getElementById("days").innerHTML = days;

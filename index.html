@@ -27,12 +27,12 @@
         </style>
 
         <div class="secondspart">
-            <p><span id="seconds"></span> seconds since graduation.</p>
+            <p><span data-toggle="tooltip" title="Tooltip on top" id="days"></span> days until graduation</p>
         </div>
         <div class="dayspart">
-            <p><span id="days"></span> days since graduation</p>
+            <p><span data-toggle="tooltip" title="Tooltip on top" id="daysC"></span> days until expected return from Coronavirus</p>
         </div>
-        <a href="whatperiodisit/index.html"><div class="periodbutton">
+        <a href="whatperiodisit/index.html" data-toggle="tooltip" title="Tooltip on top"><div class="periodbutton">
             <button class="btn btn-primary">What Period Is It Right Now?</button>
         </a></div>
 
@@ -40,14 +40,21 @@
             var d = new Date();
             function timeCheck () {
                 d = new Date();
-                var sec = ((1560121200-Math.round(d.getTime()/1000))*(-1));
+                var sec = ((1590865200-Math.round(d.getTime()/1000)));
                 var days = parseFloat((sec/86400).toFixed(5));
-                document.getElementById("seconds").innerHTML = sec;
+                var secC = ((1588389000-Math.round(d.getTime()/1000)));
+                var daysC = parseFloat((secC/86400).toFixed(5));
                 document.getElementById("days").innerHTML = days;
+                document.getElementById("daysC").innerHTML = daysC;
             }
             window.setInterval(function(){
                 timeCheck();
             }, 1000);
+        </script>
+        <script>
+            $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip();   
+            });
         </script>
     </body>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

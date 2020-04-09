@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title> Bentley Timer 2020</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </head>
+    
+    <body onload="timeCheck()">
+        <style>
+            body {
+                background-color: #131313;
+                color: white;
+            }
+            .secondspart {
+                text-align: center;
+                font-size: 600%;
+                margin: 60px;
+            }
+            .dayspart {
+                text-align: center;
+                font-size: 400%;
+                margin: 60px;
+            }
+            .periodbutton {
+                text-align: center;
+            }
+        </style>
+
+        <div class="secondspart">
+           <!--<p>Where Are We Going To College?</p>-->
+			
+			<div class="embed-responsive embed-responsive-21by9">
+				<iframe class="embed-responsive" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ9V7sSvNRx9IyegbGlapXab4HYYq4nwUIg5uQmYJ1wUdAPCYtAHxQw5Ze-WSfoKMysOayKDFzGihgK/pubhtml?widget=true&amp;headers=false"></iframe>
+			</div>
+			
+			
+        </div>
+       
+        <div class="periodbutton">
+            <a href="index.html">
+				<button class="btn btn-primary" id="button">How Much Time Until 2020 Graduation?</button>
+			</a>
+			<a href="whatperiodisit/index.html">
+				<button class="btn btn-primary">What Period Is It Right Now?</button>
+			</a>
+			<a href="https://docs.google.com/spreadsheets/d/1P-SHikk9v_l9Hb99wH0y9H7hx29PC6qKkc_njMN7iDA/edit#gid=0">
+			<button class="btn btn-primary">Where Are We Going To College?</button>
+			</a>
+        </div>
+		
+
+        <script>
+            var d = new Date();
+            function timeCheck () {
+                d = new Date();
+                var sec = ((1590865200-Math.round(d.getTime()/1000)));
+                var days = parseFloat((sec/86400).toFixed(5));
+                var secC = ((1588389000-Math.round(d.getTime()/1000)));
+                var daysC = parseFloat((secC/86400).toFixed(5));
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("daysC").innerHTML = daysC;
+            }
+            window.setInterval(function(){
+                timeCheck();
+            }, 1000);
+            $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip();   
+            });
+        </script>
+    </body>
+</html>

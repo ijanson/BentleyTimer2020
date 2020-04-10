@@ -50,25 +50,5 @@
 			<button class="btn btn-primary">Where Are We Going To College?</button>
 			</a>
         </div>
-		
-
-        <script>
-            var d = new Date();
-            function timeCheck () {
-                d = new Date();
-                var sec = ((1590865200-Math.round(d.getTime()/1000)));
-                var days = parseFloat((sec/86400).toFixed(5));
-                var secC = ((1588389000-Math.round(d.getTime()/1000)));
-                var daysC = parseFloat((secC/86400).toFixed(5));
-                document.getElementById("days").innerHTML = days;
-                document.getElementById("daysC").innerHTML = daysC;
-            }
-            window.setInterval(function(){
-                timeCheck();
-            }, 1000);
-            $(document).ready(function(){
-                $('[data-toggle="tooltip"]').tooltip();   
-            });
-        </script>
     </body>
 </html>

@@ -33,11 +33,11 @@
         	 <p>RIP Class of 2020</p>
         	 <a href="rip.png"><img src="rip.png" class="rounded img-fluid p-3" alt="RIP Class of 2020"></a>
             <p><span data-toggle="tooltip" title="5/30/20 @11:00am on the Field" id="days"></span> days until graduation</p>
+			<p><span data-toggle="tooltip" title="5/22/20 @2:30pm" id="daysLD"></span> days left of "school"</p>
         </div>
 	<div class="dayspart">
-            	<p><span data-toggle="tooltip" title="5/22/20" id="daysC"></span> days left of "school"</p>
 		<p><del><span data-toggle="tooltip" title="5/1/20" id="daysC"></span> days until expected return from Coronavirus</del></p>
-        </div>
+    </div>
         <div class="periodbutton p-3">
             <a href="whatperiodisit/index.html">
 				<button class="btn btn-primary">What Period Is It Right Now?</button>
@@ -52,12 +52,15 @@
             var d = new Date();
             function timeCheck () {
                 d = new Date();
-                var sec = ((1590865200-Math.round(d.getTime()/1000)));
+                var sec = ((1590836400-Math.round(d.getTime()/1000)));
                 var days = parseFloat((sec/86400).toFixed(5));
                 var secC = ((1588389000-Math.round(d.getTime()/1000)));
                 var daysC = parseFloat((secC/86400).toFixed(5));
+				var secLD = ((1590157800-Math.round(d.getTime()/1000)));
+                var daysLD = parseFloat((secLD/86400).toFixed(5));
                 document.getElementById("days").innerHTML = days;
                 document.getElementById("daysC").innerHTML = daysC;
+				document.getElementById("daysLD").innerHTML = daysLD;
             }
             window.setInterval(function(){
                 timeCheck();
